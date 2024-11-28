@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package myservice;  // Add package declaration
+
+// Add this line to specify the Go package path
+option go_package = ".";
+
+
+service CustomCalculator {  
+    rpc Calculate (Input) returns (Output);
+    rpc Multiply (Input) returns (Output);
+}
+
+message Input {
+    int32 num_1 = 1;
+    int32 num_2 = 2;
+}
+
+message Output {
+    int32 result = 1;
+}
